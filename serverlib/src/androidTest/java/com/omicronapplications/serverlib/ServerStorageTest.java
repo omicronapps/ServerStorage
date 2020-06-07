@@ -1,7 +1,7 @@
 package com.omicronapplications.serverlib;
 
-import android.support.test.InstrumentationRegistry;
-import android.support.test.runner.AndroidJUnit4;
+import androidx.test.platform.app.InstrumentationRegistry;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -18,7 +18,7 @@ public class ServerStorageTest {
 
     @Before
     public void setup() {
-        storage = new ServerStorage(InstrumentationRegistry.getTargetContext(), "ftp", 1);
+        storage = new ServerStorage(InstrumentationRegistry.getInstrumentation().getTargetContext(), "ftp", 1);
         storage.deleteStorage();
 
         server1 = new FTPServer("testftp.com", 22, "anonymous", "", "/");
