@@ -22,7 +22,7 @@ ServerStorage is used in [AndPlug](https://play.google.com/store/apps/details?id
 ## Prerequisites
 
 - [Android 4.0.3](https://developer.android.com/about/versions/android-4.0.3) (API Level: 15) or later (`ICE_CREAM_SANDWICH_MR1`)
-- [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 4.0.0 or later (`gradle:4.0.0`)
+- [Android Gradle Plugin](https://developer.android.com/studio/releases/gradle-plugin) 7.0.1 or later (`gradle:7.0.1`)
 
 ## Installation
 
@@ -84,7 +84,7 @@ storage.deleteStorage();
 
 ## Credits
 
-Copyright (C) 2019-2020 [Fredrik Claesson](https://github.com/omicronapps)
+Copyright (C) 2019-2021 [Fredrik Claesson](https://github.com/omicronapps)
 
 ## Release History
 
