@@ -30,11 +30,11 @@ public class ServerStorageTest {
     public void testAddDelete() {
         assertEquals("getCount", storage.getCount(), 0);
 
-        assertEquals("addServer", storage.addServer(server1), true);
+        assertTrue("addServer", storage.addServer(server1));
         assertEquals("getCount", storage.getCount(), 1);
-        assertEquals("addServer", storage.addServer(server2), true);
+        assertTrue("addServer", storage.addServer(server2));
         assertEquals("getCount", storage.getCount(), 2);
-        assertEquals("addServer", storage.addServer(server3), true);
+        assertTrue("addServer", storage.addServer(server3));
         assertEquals("getCount", storage.getCount(), 3);
 
         assertEquals("deleteServer", storage.deleteServer(server1), 1);
@@ -47,9 +47,9 @@ public class ServerStorageTest {
 
     @Test
     public void testEdit() {
-        assertEquals("addServer", storage.addServer(server3), true);
-        assertEquals("addServer", storage.addServer(server2), true);
-        assertEquals("addServer", storage.addServer(server1), true);
+        assertTrue("addServer", storage.addServer(server3));
+        assertTrue("addServer", storage.addServer(server2));
+        assertTrue("addServer", storage.addServer(server1));
 
         List<FTPServer> list = storage.getServers();
         assertNotNull("getServers", list);

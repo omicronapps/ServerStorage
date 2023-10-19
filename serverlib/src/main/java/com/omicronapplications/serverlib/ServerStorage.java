@@ -65,7 +65,13 @@ public class ServerStorage extends SQLiteOpenHelper {
 
         String[] whereArgs = new String[1];
         whereArgs[0] = String.valueOf(server.getRow());
-        int rowCount = db.delete(TABLE_NAME, getDatabaseName() + " =? ", whereArgs);
+        int rowCount = 0;
+        try {
+            rowCount = db.delete(TABLE_NAME, getDatabaseName() + " =? ", whereArgs);
+        } catch (android.database.SQLException e) {
+            rowCount = -1;
+        }
+
         db.close();
 
         return rowCount;
@@ -74,7 +80,12 @@ public class ServerStorage extends SQLiteOpenHelper {
     public int deleteStorage() {
         SQLiteDatabase db = getWritableDatabase();
 
-        int rowCount = db.delete(TABLE_NAME, null, null);
+        int rowCount = 0;
+        try {
+            rowCount = db.delete(TABLE_NAME, null, null);
+        } catch (android.database.SQLException e) {
+            rowCount = -1;
+        }
         db.close();
 
         return rowCount;
